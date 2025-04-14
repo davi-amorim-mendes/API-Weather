@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cat API</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="src/styles/style.css">
+</head>
+<body>
+    <h1>The Cat API</h1>
+    <div id="container">
+        <div id="icons">
+            <button id="iconsUp" onclick="votingPage()">
+                <i class="fa-solid fa-square-poll-vertical" id="voting"></i>
+                <p id="textIcon">
+                    Voting
+                </p>
+            </button>
+            <button id="iconsUp" onclick="breedsPage()">
+                <i class="fa-solid fa-magnifying-glass" id="breeds"></i>
+                <p id="textIcon">
+                    Breeds
+                </p>
+            </button>
+            <button id="iconsUp" onclick="favPage()">
+                <i class="fa-regular fa-star" id="favs"></i>
+                <p id="textIcon">
+                    Favs
+                </p>
+            </button>
+        </div>
+        <div id="favCat">
+            <img src="img/WIN_20241028_21_49_24_Pro.jpg" id="favSlide">
+            <img src="img/WIN_20241028_21_49_24_Pro.jpg" id="favSlide">
+            <img src="img/WIN_20241028_21_49_24_Pro.jpg" id="favSlide">
+            <img src="img/WIN_20241028_21_49_24_Pro.jpg" id="favSlide">
+            <img src="img/WIN_20241028_21_49_24_Pro.jpg" id="favSlide">
+            <img src="img/WIN_20241028_21_49_24_Pro.jpg" id="favSlide">
+        </div>
+        <div id="catImg">
+            <img id="catSlide">
+        </div>
+        <div id="icons">
+            <button id="iconsDown" class="heart" onclick="catFav()">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+            <button id="iconsDown" class="like">
+                <i class="fa-regular fa-thumbs-up"></i>
+            </button>
+            <button id="iconsDown" class="deslike">
+                <i class="fa-regular fa-thumbs-down"></i>
+            </button>
+        </div>
+    </div>
+</body>
+<script src="javascript/script.js"></script>
+</html>
