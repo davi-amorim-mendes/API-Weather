@@ -23,7 +23,7 @@ body
     border-radius: 20px;
     padding: 30px 10px;
     min-width: 700px;
-    min-height: 400px;
+    min-height: 500px;
 }
 
 #favCat
@@ -34,7 +34,30 @@ body
     margin-top: 20px;
     align-items: center;
     justify-content: center;
+    margin-left: 70px;
+    width: 570px;
+
+}
+
+#vazio
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    margin-top: 20px;
     margin-left: 55px;
+    border-width: 2px;
+    border-color: gainsboro;
+    border-radius: 10px;
+    border-style: groove;
+    width: 570px;
+    height: 200px;
+}
+
+p
+{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;   
 }
 
 #favCat #favSlide
@@ -124,6 +147,7 @@ h1
     font-size: 15px;
     padding: 10px;
     border-radius: 10px;
+    border-color: gainsboro;
 }
 
 #submit
@@ -135,6 +159,7 @@ h1
     justify-content: center;
     border-radius: 20px;
     border-width: 1px;
+    border-color: gainsboro;
     gap: 10px;
     padding: 5px;
 }
@@ -143,3 +168,9 @@ h1
 {
     font-size: 25px;
 }
+
+#letra
+{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+

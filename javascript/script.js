@@ -1,5 +1,7 @@
 const apiKey = `live_tn3eyfcU5ZNoyBUNo46k3FPN1vU55EC2KSmsOmAb8uz3FR2FSxAZaO290OgOxSAu`;
 const apiUrl = `https://api.thecatapi.com/v1/images/search?api_key=${apiKey}`;
+var seila = 0;
+
 
 async function catImg()
 {
@@ -21,7 +23,14 @@ async function catImg()
         );
     }
 
-    console.log(data);
+    // console.log("ID 1: " + data[0].id);
+
+    document.getElementsByClassName("heart")[0].addEventListener("click", function()
+    {
+        
+        catFav({catUrl: data[0].url,});
+    }, { once: true });
+    
     
 }
 
@@ -44,12 +53,55 @@ function votingPage()
     const catSlide = document.querySelector('#catSlide');
     const favCat = document.querySelector('#favCat');
     const breedCat = document.querySelector('#breedCat');
+    const vazio = document.querySelector('#vazio');
+    vazio.style.display = 'none';
+    catSlide.style.display = 'flex';
     breedCat.style.display = 'none'; 
     favCat.style.display = 'none';
     iconVoting.style.color = 'orange';
     iconBreeds.style.color = 'darkslategrey';
     iconFav.style.color = 'darkslategrey';
+}
+
+async function catFav(url)
+{
+    // console.log("ID 2: " + url.catUrl);
+
+    const divFav = document.getElementById("favCat");
+    const createFav = document.createElement('img');
+    createFav.src = url.catUrl;
+    createFav.id = "favSlide";
+
+    divFav.appendChild(createFav);
+
+    const vazio = document.querySelector('#vazio');
+    vazio.style.display = 'none';
+    seila = 1;
     catImg();
+
+
+    // catImg();
+
+    // const imgID = id.catID;
+    // const subID = "amoreutv";
+
+    // var rawBody = JSON.stringify
+    // (
+    //     { 
+    //         "image_id": imgID,
+    //         "sub_id": subID
+    //     }
+    // );
+
+    // const newFavourite = await fetch
+    // (
+    //     "https://api.thecatapi.com/v1/favourites", 
+    //     {
+    //         method: 'POST',
+    //         headers: { 'x-api-key': apiKey} ,
+    //         body: rawBody
+    //     }
+    // )
 }
 
 async function favPage()
@@ -59,26 +111,38 @@ async function favPage()
     const iconFav = document.querySelector('#favs');
     const catSlide = document.querySelector('#catSlide');
     const breedCat = document.querySelector('#breedCat');
+    const favImg = document.querySelector('#favCat');
+    favImg.style.display = 'grid';
     breedCat.style.display = 'none';
     catSlide.style.display = 'none'
     iconVoting.style.color = 'darkslategrey';
     iconBreeds.style.color = 'darkslategrey';
     iconFav.style.color = 'orange';
+    console.log(seila);
+    const vazio = document.querySelector('#vazio');
+    if(seila == 0)
+    {
+        vazio.style.display = 'flex';
+    }
+    else
+    {
+        vazio.style.display = 'none';
+    }
 
-    const response = await fetch
-    (
-        'https://api.thecatapi.com/v1/favourites?limit=6&sub_id=amoreutv&order=DESC',
-        {
-            headers:
-            {
-                "content-type":"application/json",
-                'x-api-key': apiKey
-            }
-        }
-    );
-    const favourites = await response.json();
+    // const response = await fetch
+    // (
+    //     'https://api.thecatapi.com/v1/favourites?limit=6&sub_id=amoreutv&order=DESC',
+    //     {
+    //         headers:
+    //         {
+    //             "content-type":"application/json",
+    //             'x-api-key': apiKey
+    //         }
+    //     }
+    // );
+    // const favourites = await response.json();
 
-    console.log(favourites);
+    // console.log(favourites);
 }
 
 function breedsPage()
@@ -86,8 +150,12 @@ function breedsPage()
     const iconVoting = document.querySelector('#voting');
     const iconBreeds = document.querySelector('#breeds');
     const iconFav = document.querySelector('#favs');
+    const favCat = document.querySelector('#favCat');
     const catSlide = document.querySelector('#catSlide');
     const breedCat = document.querySelector('#breedCat');
+    const vazio = document.querySelector('#vazio');
+    vazio.style.display = 'none';
+    favCat.style.display = 'none';
     breedCat.style.display = 'flex';
     catSlide.style.display = 'none'
     iconVoting.style.color = 'darkslategrey';
@@ -144,49 +212,5 @@ function infoJsonBreed(json)
     }
 }
 
-async function catFav()
-{
-    const divFav = document.querySelector('#favCat');
-    const favCat = document.createElement('img');
-
-    let response = await fetch(apiUrl, {
-        headers: {
-            'x-api-key': apiKey
-        }
-    });
-
-    const data = await response.json();
-
-    if (data && data.length > 0) 
-        {
-            infoJson
-            (
-                {
-                    catId: data[0].id,
-                }
-            );
-        }
-    console.log(catId);
-
-    var rawBody = JSON.stringify
-    (
-        { 
-            "image_id": catId,
-            "sub_id":"amoreutv"
-        }
-    );
-
-    const newFavourite = await fetch
-    (
-        "https://api.thecatapi.com/v1/favourites", 
-        {
-            method: 'POST',
-            headers: { 'x-api-key': apiKey} ,
-            body: rawBody
-        }
-    )
-
-    votingPage();
-}
-
 votingPage();
+catImg();
