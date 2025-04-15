@@ -43,6 +43,8 @@ function votingPage()
     const iconFav = document.querySelector('#favs');
     const catSlide = document.querySelector('#catSlide');
     const favCat = document.querySelector('#favCat');
+    const breedCat = document.querySelector('#breedCat');
+    breedCat.style.display = 'none'; 
     favCat.style.display = 'none';
     iconVoting.style.color = 'orange';
     iconBreeds.style.color = 'darkslategrey';
@@ -56,6 +58,8 @@ async function favPage()
     const iconBreeds = document.querySelector('#breeds');
     const iconFav = document.querySelector('#favs');
     const catSlide = document.querySelector('#catSlide');
+    const breedCat = document.querySelector('#breedCat');
+    breedCat.style.display = 'none';
     catSlide.style.display = 'none'
     iconVoting.style.color = 'darkslategrey';
     iconBreeds.style.color = 'darkslategrey';
@@ -83,10 +87,61 @@ function breedsPage()
     const iconBreeds = document.querySelector('#breeds');
     const iconFav = document.querySelector('#favs');
     const catSlide = document.querySelector('#catSlide');
+    const breedCat = document.querySelector('#breedCat');
+    breedCat.style.display = 'flex';
     catSlide.style.display = 'none'
     iconVoting.style.color = 'darkslategrey';
     iconBreeds.style.color = 'orange';
     iconFav.style.color = 'darkslategrey';
+
+
+}
+
+document.querySelector('#formCat').addEventListener('submit', async (event) =>{
+    event.preventDefault();
+
+    const type = document.querySelector('#typeCat').value;
+
+    console.log(type);
+
+    const apiBreeds = `https://api.thecatapi.com/v1/images/search?breed_ids=${type}`;
+    const catSlide = document.querySelector('#catSlide');
+    catSlide.style.display = 'flex';
+    getType(apiBreeds);
+});
+
+async function getType(breedUrl)
+{
+    console.log(breedUrl);
+    let response = await fetch(breedUrl, {
+        headers: {
+            'x-api-key': apiKey
+        }
+    });
+    console.log(response.status);
+
+    const data = await response.json();
+
+    if (data && data.length > 0) 
+    {
+        infoJsonBreed
+        (
+            {
+                catImg: data[0].url,
+            }
+        );
+    }
+    console.log(data);
+}
+
+function infoJsonBreed(json)
+{
+    const catSlide = document.querySelector('#catSlide');
+    if (catSlide) {
+        catSlide.setAttribute('src', json.catImg);
+    } else {
+        console.log("Elemento #catSlide não encontrado");
+    }
 }
 
 async function catFav()
@@ -130,6 +185,8 @@ async function catFav()
             body: rawBody
         }
     )
+
+    votingPage();
 }
 
 votingPage();

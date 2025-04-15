@@ -30,29 +30,53 @@
                 </p>
             </button>
         </div>
-        <div id="favCat">
-            <img src="img/WIN_20241028_21_49_24_Pro.jpg" id="favSlide">
-            <img src="img/WIN_20241028_21_49_24_Pro.jpg" id="favSlide">
-            <img src="img/WIN_20241028_21_49_24_Pro.jpg" id="favSlide">
-            <img src="img/WIN_20241028_21_49_24_Pro.jpg" id="favSlide">
-            <img src="img/WIN_20241028_21_49_24_Pro.jpg" id="favSlide">
-            <img src="img/WIN_20241028_21_49_24_Pro.jpg" id="favSlide">
+        <div id="breedCat">
+            <form id="formCat">
+                <select id="typeCat">
+                    <option value="abys">Abyssinian</option>
+                    <option value="aege">Aegean</option>
+                    <option value="abob">American Bobtail</option>
+                    <option value="acur">American Curl</option>
+                    <option value="asho">American Shorthair</option>
+                    <option value="awir">American Wirehair</option>
+                    <option value="amau">Arabian Mau</option>
+                    <option value="amis">Australian Mist</option>
+                    <option value="bali">Balinese</option>
+                    <option value="bamb">Bambino</option>
+                    <option value="beng">Bengal</option>
+                    <option value="birm">Birman</option>
+                    <option value="bomb">Bombay</option>
+                    <option value="bslo">British Longhair</option>
+                    <option value="bsho">British Shorthair</option>
+                    <option value="bure">Burmese</option>
+                </select>
+                <button type="submit" id="submit"><i class="fa-solid fa-cat" id="search"></i></button>
+            </form>
+            </div>
+            <div id="favCat">
+                <img src="img/WIN_20241028_21_49_24_Pro.jpg" id="favSlide">
+                <img src="img/WIN_20241028_21_49_24_Pro.jpg" id="favSlide">
+                <img src="img/WIN_20241028_21_49_24_Pro.jpg" id="favSlide">
+                <img src="img/WIN_20241028_21_49_24_Pro.jpg" id="favSlide">
+                <img src="img/WIN_20241028_21_49_24_Pro.jpg" id="favSlide">
+                <img src="img/WIN_20241028_21_49_24_Pro.jpg" id="favSlide">
+            </div>
+            <div id="catImg">
+                <img id="catSlide">
+            </div>
+            <div id="icons">
+                <button id="iconsDown" class="heart" onclick="catFav()">
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+                <button id="iconsDown" class="like">
+                    <i class="fa-regular fa-thumbs-up"></i>
+                </button>
+                <button id="iconsDown" class="deslike">
+                    <i class="fa-regular fa-thumbs-down"></i>
+                </button>
+            </div>
         </div>
-        <div id="catImg">
-            <img id="catSlide">
         </div>
-        <div id="icons">
-            <button id="iconsDown" class="heart" onclick="catFav()">
-                <i class="fa-regular fa-heart"></i>
-            </button>
-            <button id="iconsDown" class="like">
-                <i class="fa-regular fa-thumbs-up"></i>
-            </button>
-            <button id="iconsDown" class="deslike">
-                <i class="fa-regular fa-thumbs-down"></i>
-            </button>
-        </div>
-    </div>
 </body>
 <script src="javascript/script.js"></script>
 </html>

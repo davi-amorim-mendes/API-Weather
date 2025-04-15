@@ -106,3 +106,40 @@ h1
     position: absolute;
     top: 180px;
 }
+
+#breedCat
+{
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+} 
+
+#breedCat #typeCat
+{
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 500px;
+    height: 40px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#submit
+{
+    background-color: white;
+    display: inline;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    border-width: 1px;
+    gap: 10px;
+    padding: 5px;
+}
+
+#submit #search
+{
+    font-size: 25px;
+}
