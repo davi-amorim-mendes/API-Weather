@@ -50,10 +50,12 @@ function votingPage()
     const iconVoting = document.querySelector('#voting');
     const iconBreeds = document.querySelector('#breeds');
     const iconFav = document.querySelector('#favs');
-    const catSlide = document.querySelector('#catSlide');
+    const catSlide = document.querySelector('#catImg');
     const favCat = document.querySelector('#favCat');
     const breedCat = document.querySelector('#breedCat');
     const vazio = document.querySelector('#vazio');
+    const funciona = document.querySelector('#funciona');
+    funciona.style.display = 'flex';
     vazio.style.display = 'none';
     catSlide.style.display = 'flex';
     breedCat.style.display = 'none'; 
@@ -109,10 +111,11 @@ async function favPage()
     const iconVoting = document.querySelector('#voting');
     const iconBreeds = document.querySelector('#breeds');
     const iconFav = document.querySelector('#favs');
-    const catSlide = document.querySelector('#catSlide');
+    const catSlide = document.querySelector('#catImg');
     const breedCat = document.querySelector('#breedCat');
     const favImg = document.querySelector('#favCat');
-    favImg.style.display = 'grid';
+    const funciona = document.querySelector('#funciona');
+    funciona.style.display = 'none';
     breedCat.style.display = 'none';
     catSlide.style.display = 'none'
     iconVoting.style.color = 'darkslategrey';
@@ -122,10 +125,12 @@ async function favPage()
     const vazio = document.querySelector('#vazio');
     if(seila == 0)
     {
+        favImg.style.display = 'none';
         vazio.style.display = 'flex';
     }
     else
     {
+        favImg.style.display = 'grid';
         vazio.style.display = 'none';
     }
 
@@ -151,13 +156,16 @@ function breedsPage()
     const iconBreeds = document.querySelector('#breeds');
     const iconFav = document.querySelector('#favs');
     const favCat = document.querySelector('#favCat');
-    const catSlide = document.querySelector('#catSlide');
+    const catSlide = document.querySelector('#catImg');
     const breedCat = document.querySelector('#breedCat');
+    const funciona = document.querySelector('#funciona');
+    funciona.style.display = 'flex';
+    catSlide.style.display = 'flex';
     const vazio = document.querySelector('#vazio');
     vazio.style.display = 'none';
     favCat.style.display = 'none';
     breedCat.style.display = 'flex';
-    catSlide.style.display = 'none'
+    // catSlide.style.display = 'none'
     iconVoting.style.color = 'darkslategrey';
     iconBreeds.style.color = 'orange';
     iconFav.style.color = 'darkslategrey';
