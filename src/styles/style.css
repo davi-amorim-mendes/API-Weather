@@ -11,19 +11,39 @@
 body
 {
     background: linear-gradient(yellow, orangered);
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
 }
 
+.pe
+{
+    display: flex;
+    align-items: center;
+    justify-content: ;
+    margin: 0;
+    margin-top: 20px;
+    margin-left: 90px;
+    color: darkslategray;
+}
+
+#link
+{
+    text-decoration: none;
+}
+
 #container
 {
     background-color: whitesmoke;
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 1);
+    border-width: 5px;
     border-radius: 20px;
+    border-color: darkslategray;
     padding: 30px 10px;
     min-width: 700px;
     min-height: 500px;
+    margin: 0;
 }
 
 #favCat
@@ -125,9 +145,15 @@ p
 
 h1
 {
-    display: none;
-    position: absolute;
-    top: 180px;
+    display: flex;
+    margin-left: 90px;
+    margin-bottom: 20px;
+    color: orangered;
+}
+
+#CARA
+{
+    display: block;
 }
 
 #breedCat
@@ -174,3 +200,20 @@ h1
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.fundo
+{
+    position: absolute;
+}
+
+#gato1
+{
+    width: 500px;
+    bottom: 0px;
+    left: 20px;
+}
+#gato2
+{
+    width: 550px;
+    bottom: 0px;
+    right: 20px;
+}
