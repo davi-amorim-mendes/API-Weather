@@ -11,5 +11,5 @@ Projeto de integração a APIs.
 - Html
 - CSS
 #
-<a href="https://thecatapi.com/" target="_blank">Link da API</a><br>
-<a href="https://fontawesome.com/" target="_blank">Ícones utilizados</a>
+Link da API: https://thecatapi.com/ <br>
+Ícones utilizados: https://fontawesome.com/
